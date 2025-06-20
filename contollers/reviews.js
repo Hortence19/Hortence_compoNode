@@ -14,3 +14,12 @@ exports.addReviews = (req, res) => {
         .catch((error) => res.json(error))
 };
 
+exports.getReviewById = (req, res) => {
+    Review.findOne({
+        _id: req.params.id
+    })
+        .then((data) => res.status(200).json(data))
+        .catch((error) => res.json(error))
+};
+
+
